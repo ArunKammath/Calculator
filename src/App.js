@@ -9,13 +9,29 @@ function Title(props) {
     </div>
   );
 }
+function GetInputValue() {
+  return parseInt(document.getElementById("numberInput").value);
+}
 function App() {
   let { state, setState } = Result(0);
+
   return (
     <div>
       <Title msg="My Calculator" />
-      <h1>{state}</h1>
-      <Button name="Add" value={state} setValue={setState} />
+      <h1>Result :{state}</h1>
+      <input type="number" id="numberInput" placeholder="Enter Number"></input>
+      <Button
+        name="Add"
+        value={GetInputValue}
+        result={state}
+        setValue={setState}
+      />
+      <Button
+        name="Subtract"
+        value={GetInputValue}
+        result={state}
+        setValue={setState}
+      />
     </div>
   );
 }
