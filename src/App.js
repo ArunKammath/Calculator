@@ -3,20 +3,19 @@ import Button from "./Button.js";
 import Result from "./result.js";
 
 function Title(props) {
-  let { state } = Result();
-  console.log("state", state);
   return (
     <div>
       <h1>{props.msg}</h1>
-      <h1>{state}</h1>
     </div>
   );
 }
 function App() {
+  let { state, setState } = Result(0);
   return (
     <div>
       <Title msg="My Calculator" />
-      <Button name="Add" value={10} />
+      <h1>{state}</h1>
+      <Button name="Add" value={state} setValue={setState} />
     </div>
   );
 }
