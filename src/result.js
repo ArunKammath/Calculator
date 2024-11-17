@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function Result() {
-  let [state, setState] = useState(0);
+function Result(val) {
+  let [state, setState] = useState(val);
   return { state, setState };
 }
 export default Result;
