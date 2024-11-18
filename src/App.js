@@ -10,10 +10,10 @@ function Title(props) {
   );
 }
 function GetInputValue() {
-  return parseInt(document.getElementById("numberInput").value);
+  return parseFloat(document.getElementById("numberInput").value);
 }
 function App() {
-  let { state, setState } = Result(0);
+  let { state, setState } = Result(0.0);
 
   return (
     <div>
@@ -32,6 +32,20 @@ function App() {
         result={state}
         setValue={setState}
       />
+      <Button
+        name="Multiply"
+        value={GetInputValue}
+        result={state}
+        setValue={setState}
+      />
+      <Button
+        name="Divide"
+        value={GetInputValue}
+        result={state}
+        setValue={setState}
+      />
+      <Button name="ResetInput" />
+      <Button name="ResetResult" setValue={setState} />
     </div>
   );
 }
